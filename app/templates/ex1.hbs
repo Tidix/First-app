@@ -2,7 +2,9 @@
 
 <p> Note : </p>
 
-<Textarea @value={{model.content}}/>
-
-<h3>{{model.content}}</h3>
+<Textarea @value={{model.content}} data-ng-change="updateInfo()" cols="40" rows="5" maxlength="100"/> <br/>
+<button {{@action this.save}}> Valider </button>
+<button {{@action this.clear}}> Effacer</button>
+<br/> <br/>
+Nombre de caractères restant : {{model.size}} <br/>
 {{outlet}}
