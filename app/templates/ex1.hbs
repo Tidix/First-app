@@ -1,10 +1,18 @@
-<h3> Ex 1 : Note Application </h3>
 
-<p> Note : </p>
 
-<Textarea @value={{model.content}} data-ng-change="updateInfo()" cols="40" rows="5" maxlength="100"/> <br/>
-<button {{@action this.save}}> Valider </button>
-<button {{@action this.clear}}> Effacer</button>
-<br/> <br/>
-Nombre de caractères restant : {{model.size}} <br/>
+<div class="toogle ng-scope">
+    <div class="ng-scope">
+        <div class="panel panel-primary">
+            <h1> Ex 1 : Note Application </h1>
+            <h2> Note : </h2>
+            <Textarea @value={{model.content}} data-ng-change="updateInfo()" cols="40" rows="5" maxlength={{model.MAX}}/> <br/>
+            <button class="btn btn-primary" {{action "save" model}}> Valider </button>
+            <button class="btn btn-primary" {{action "clear" model}}> Effacer</button>
+            <br/> <br/>
+            <div class={{model.style}}> Nombre de caractères restant : {{model.size}} </div>
+            <div class ={{model.alertVisible}} > {{model.info}} </div>
+            <p> sauvegardé : {{model.saved}}</p>
+        </div>
+    </div>
+</div>
 {{outlet}}
