@@ -17,6 +17,7 @@ Router.map(function() {
   this.route('utils', function() {
     this.route('note-class');
   });
+  this.route('ex2');
 });
 
 export default Router;

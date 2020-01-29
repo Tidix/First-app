@@ -3,11 +3,11 @@ import Controller from '@ember/controller';
 export default Controller.extend({
     actions:{
         save(model){
-            console.log("yes");
-            model.set("saved", content)
+            model.set("saved", model.content);
+            console.log(model.saved);
         },
         clear(model){
-            console.log("no");
+            model.set("content", '');
         }
     }
-});
+})

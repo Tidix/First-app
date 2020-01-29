@@ -1,18 +1,23 @@
 
 
-<div class="toogle ng-scope">
+<div class="container">
+  <div class="center"><div class="toogle ng-scope" style="text-align:center">
     <div class="ng-scope">
         <div class="panel panel-primary">
             <h1> Ex 1 : Note Application </h1>
+            <hr>
             <h2> Note : </h2>
+        </div>
             <Textarea @value={{model.content}} data-ng-change="updateInfo()" cols="40" rows="5" maxlength={{model.MAX}}/> <br/>
             <button class="btn btn-primary" {{action "save" model}}> Valider </button>
             <button class="btn btn-primary" {{action "clear" model}}> Effacer</button>
             <br/> <br/>
             <div class={{model.style}}> Nombre de caractères restant : {{model.size}} </div>
             <div class ={{model.alertVisible}} > {{model.info}} </div>
-            <p> sauvegardé : {{model.saved}}</p>
-        </div>
+            
+        
     </div>
+  </div>
+</div>
 </div>
 {{outlet}}

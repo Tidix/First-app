@@ -26,7 +26,7 @@ export default Route.extend({
         let content = this.get('content');
         let saved = this.get('saved');
         if(saved == content && saved != '')    
-            return `note sauvegardée`
+            return `note sauvegardée`;
         if(content.length == 0 || content==saved)
             return ``;
         return `note modifiée`;
@@ -35,8 +35,10 @@ export default Route.extend({
     alertVisible : computed('content','saved', function(){
         let content = this.get('content');
         let saved = this.get('saved');
-        if(content.length==0 || content==saved)
+        if(content.length==0)
             return ``;
+        if(content == saved)
+            return `alert alert-success`;
         return `alert alert-primary`;
     }),
     
